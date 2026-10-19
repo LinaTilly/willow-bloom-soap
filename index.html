@@ -1,0 +1,399 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Willow & Bloom — a premium botanical soap brand concept. Handmade soaps inspired by nature and everyday rituals.">
+<title>Willow & Bloom | Botanical Soap Atelier</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+ --cream:#f8f6f0;
+ --white:#fffefa;
+ --sage:#e4eade;
+ --dark:#365447;
+ --ink:#343c34;
+ --muted:#777b70;
+ --rose:#e4cec5;
+ --olive:#b8bfaa;
+ --gold:#ae906c;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--cream);color:var(--ink);
+ font-family:"DM Sans",Arial,sans-serif}
+img{display:block;width:100%;object-fit:cover}
+a{text-decoration:none;color:inherit}
+button,input{font:inherit}
+button{cursor:pointer}
+h1,h2,h3,.brand,.serif{font-family:"Playfair Display",Georgia,serif}
+h1,h2,h3{font-weight:400}
+p{line-height:1.8;color:var(--muted)}
+.eyebrow{font-size:10px;letter-spacing:3px;text-transform:uppercase;
+ color:#9b8066;font-weight:700}
+.btn{display:inline-flex;align-items:center;justify-content:center;
+ min-height:49px;padding:13px 23px;border:1px solid var(--dark);
+ background:var(--dark);color:#fff;font-size:11px;
+ letter-spacing:1.7px;font-weight:700;text-transform:uppercase;
+ transition:.2s}
+.btn:hover{background:#557260;border-color:#557260}
+.btn.light{background:transparent;color:var(--dark)}
+.btn.light:hover{background:var(--dark);color:#fff}
+.topbar{text-align:center;background:var(--dark);color:#f7f5ee;
+ padding:11px;font-size:10px;letter-spacing:2px}
+header{background:var(--white);display:flex;align-items:center;
+ justify-content:space-between;padding:19px 6%;gap:20px}
+.brand{font-size:27px;letter-spacing:1.3px;white-space:nowrap}
+.brand small{font-family:"DM Sans",sans-serif;display:block;
+ text-align:center;font-size:8px;letter-spacing:3px;
+ margin-top:7px;color:var(--gold);font-weight:600}
+nav{display:flex;gap:30px;font-size:11px;letter-spacing:1px}
+nav a:hover{color:var(--gold)}
+.nav-cta{font-size:10px;border-bottom:1px solid var(--dark);
+ padding-bottom:6px;letter-spacing:1px}
+.hero{display:grid;grid-template-columns:48% 52%;min-height:610px}
+.hero-copy{padding:80px 10% 80px 12%;display:flex;
+ flex-direction:column;justify-content:center;align-items:flex-start}
+.hero h1{font-size:clamp(44px,5.5vw,83px);
+ line-height:1.08;margin:23px 0}
+.hero h1 em{color:#82947c;font-weight:400}
+.hero p{font-size:15px;max-width:430px;margin:0 0 30px}
+.hero-media{position:relative;overflow:hidden;background:#e4e8db}
+.hero-media img{height:100%;min-height:550px;object-position:center}
+.hero-note{position:absolute;bottom:27px;left:25px;background:#fffefaed;
+ padding:13px 18px;font-size:10px;letter-spacing:2px;color:var(--dark)}
+.benefits{background:#f0f2e9;display:grid;
+ grid-template-columns:repeat(3,1fr);text-align:center}
+.benefit{padding:26px 14px;border-right:1px solid #d9e0d3}
+.benefit:last-child{border:0}
+.benefit span{display:block;font-size:21px;color:#738c77;margin-bottom:7px}
+.benefit b{font-size:10px;text-transform:uppercase;letter-spacing:1.5px}
+section{padding:85px 6%}
+.section-head{text-align:center;max-width:650px;margin:0 auto 37px}
+.section-head h2{font-size:clamp(34px,4vw,53px);margin:12px 0}
+.section-head p{font-size:14px}
+.products{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.product-image{position:relative;overflow:hidden;background:#e9e8de}
+.product-image img{height:330px;transition:transform .5s}
+.product:hover img{transform:scale(1.04)}
+.tag{position:absolute;top:16px;left:16px;background:#fffefaed;
+ padding:8px 11px;text-transform:uppercase;letter-spacing:1.5px;
+ font-size:9px;color:var(--dark)}
+.product h3{font-size:23px;margin:19px 0 4px}
+.product-desc{font-size:12px;margin:0 0 7px}
+.price{color:#997e65;font-size:12px;font-weight:600}
+.section-action{text-align:center;margin-top:38px}
+.ritual{display:grid;grid-template-columns:1fr 1fr;background:var(--sage)}
+.ritual-img img{height:100%;min-height:470px}
+.ritual-content{padding:65px 12%;display:flex;justify-content:center;
+ align-items:flex-start;flex-direction:column}
+.ritual h2{font-size:clamp(36px,4vw,55px);
+ line-height:1.2;margin:15px 0}
+.ritual p{max-width:460px}
+.ingredient-grid{display:grid;grid-template-columns:repeat(4,1fr);
+ gap:18px;margin-top:38px}
+.ingredient{text-align:center;padding:33px 16px;
+ background:#fffefa;border:1px solid #ece9e0}
+.ingredient-icon{font-size:32px;margin-bottom:17px}
+.ingredient h3{font-size:22px;margin:6px 0}
+.ingredient p{font-size:12px;margin:8px 0}
+.gift{display:grid;grid-template-columns:1fr 1fr;
+ background:#eee4df}
+.gift-copy{padding:65px 11%;display:flex;flex-direction:column;
+ justify-content:center;align-items:flex-start}
+.gift h2{font-size:clamp(36px,4vw,55px);margin:16px 0}
+.gift-image img{height:100%;min-height:440px}
+.quote{background:#fffefa;text-align:center}
+.quote blockquote{max-width:760px;margin:20px auto;
+ font-family:"Playfair Display",Georgia,serif;
+ font-size:clamp(25px,3vw,39px);line-height:1.45;color:#536a57}
+.quote .caption{font-size:11px;color:#9b8066;letter-spacing:2px}
+.newsletter{background:#e6ebe2;text-align:center}
+.newsletter h2{font-size:clamp(34px,4vw,49px);margin:13px 0}
+.newsletter p{max-width:530px;margin:10px auto 25px}
+.newsletter form{display:flex;max-width:510px;gap:8px;margin:auto}
+.newsletter input{flex:1;min-width:0;background:var(--white);
+ border:1px solid #bcc6b9;padding:15px;font-size:13px}
+.newsletter .small{font-size:11px}
+#notice{font-size:12px;color:var(--dark);min-height:20px}
+footer{background:#304b40;color:#fff;padding:52px 6% 24px}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:35px}
+footer p,footer a{color:#e3e8df;font-size:12px}
+footer a{display:block;margin:12px 0}
+footer .brand small{color:#dfc6ab}
+.footer-bottom{margin-top:45px;padding-top:20px;
+ border-top:1px solid #617467;font-size:10px;
+ display:flex;justify-content:space-between;gap:15px;color:#d4ddd1}
+.demo{font-size:10px;letter-spacing:1.2px;color:#d8c4a9}
+@media(max-width:850px){
+ nav{gap:12px}
+ .hero{grid-template-columns:1fr 1fr;min-height:510px}
+ .hero-copy{padding:55px 8%}
+ .hero-media img{min-height:480px}
+ .products{gap:13px}
+ .product-image img{height:250px}
+ .ingredient-grid{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:650px){
+ header{flex-direction:column;padding:17px 5%}
+ nav{gap:17px;justify-content:center;flex-wrap:wrap}
+ .nav-cta{display:none}
+ .hero,.ritual,.gift{grid-template-columns:1fr}
+ .hero-copy{padding:55px 7%}
+ .hero-media img{min-height:320px;height:340px}
+ .hero-note{bottom:14px;left:14px}
+ .benefits{grid-template-columns:1fr}
+ .benefit{border-right:0;border-bottom:1px solid #d9e0d3;padding:17px}
+ .products{grid-template-columns:1fr 1fr}
+ .product-image img{height:230px}
+ .product h3{font-size:19px}
+ .ritual-content,.gift-copy{padding:45px 7%}
+ .ritual-img img,.gift-image img{height:330px;min-height:0}
+ .footer-grid{grid-template-columns:1fr 1fr}
+ .footer-grid>div:first-child{grid-column:span 2}
+ section{padding:60px 5%}
+}
+@media(max-width:420px){
+ .products{grid-template-columns:1fr}
+ .product-image img{height:320px}
+ .ingredient-grid{gap:9px}
+ .newsletter form{flex-direction:column}
+ .footer-bottom{flex-direction:column}
+}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  SMALL BATCH BOTANICAL SOAP · A MOMENT OF EVERYDAY LUXURY
+</div>
+
+<header>
+  <a href="#" class="brand">
+    Willow &amp; Bloom
+    <small>BOTANICAL SOAP ATELIER</small>
+  </a>
+  <nav aria-label="Main navigation">
+    <a href="#collection">Our Soaps</a>
+    <a href="#philosophy">Our Philosophy</a>
+    <a href="#ingredients">Ingredients</a>
+    <a href="#gifts">Gift Sets</a>
+  </nav>
+  <a class="nav-cta" href="#newsletter">JOIN OUR LETTER ↗</a>
+</header>
+
+<main>
+
+<div class="hero">
+  <div class="hero-copy">
+    <span class="eyebrow">Botanical goodness, made with care</span>
+    <h1>A Softer<br>Kind of <em>Luxury.</em></h1>
+    <p>Beautifully crafted botanical soaps for slow mornings,
+    peaceful evenings, and all the little moments in between.</p>
+    <a class="btn" href="#collection">DISCOVER OUR SOAPS</a>
+  </div>
+  <div class="hero-media">
+    <img
+      src="https://images.pexels.com/photos/7615806/pexels-photo-7615806.jpeg?auto=compress&cs=tinysrgb&w=1400"
+      alt="Natural botanical soap with greenery"
+      fetchpriority="high">
+    <span class="hero-note">PURELY INSPIRED BY NATURE</span>
+  </div>
+</div>
+
+<div class="benefits">
+  <div class="benefit"><span>✿</span><b>Thoughtfully Handcrafted</b></div>
+  <div class="benefit"><span>♡</span><b>Small Batch Care</b></div>
+  <div class="benefit"><span>❋</span><b>Inspired by Botanicals</b></div>
+</div>
+
+<section id="collection">
+  <div class="section-head">
+    <span class="eyebrow">The everyday ritual collection</span>
+    <h2>Meet Your New Favourite Ritual</h2>
+    <p>A selection of beautifully made soaps inspired
+    by nature's colours, textures and simple pleasures.</p>
+  </div>
+
+  <div class="products">
+    <article class="product">
+      <div class="product-image">
+        <span class="tag">Botanical Favourite</span>
+        <img loading="lazy"
+          src="https://images.pexels.com/photos/6690221/pexels-photo-6690221.jpeg?auto=compress&cs=tinysrgb&w=850"
+          alt="Botanical soap with eucalyptus leaves">
+      </div>
+      <h3>Eucalyptus &amp; Sage</h3>
+      <p class="product-desc">Fresh, herbal and beautifully simple.</p>
+      <div class="price">CA$12 · SAMPLE PRICE</div>
+    </article>
+
+    <article class="product">
+      <div class="product-image">
+        <span class="tag">A Little Sunshine</span>
+        <img loading="lazy"
+          src="https://images.pexels.com/photos/7615814/pexels-photo-7615814.jpeg?auto=compress&cs=tinysrgb&w=850"
+          alt="Natural soap styled with citrus and greenery">
+      </div>
+      <h3>Citrus &amp; Blossom</h3>
+      <p class="product-desc">A bright moment for your daily routine.</p>
+      <div class="price">CA$12 · SAMPLE PRICE</div>
+    </article>
+
+    <article class="product">
+      <div class="product-image">
+        <span class="tag">Slow Living Essential</span>
+        <img loading="lazy"
+          src="https://images.pexels.com/photos/4889034/pexels-photo-4889034.jpeg?auto=compress&cs=tinysrgb&w=850"
+          alt="Natural soap and bath accessories">
+      </div>
+      <h3>Oat &amp; Comfort</h3>
+      <p class="product-desc">Understated beauty for quiet moments.</p>
+      <div class="price">CA$13 · SAMPLE PRICE</div>
+    </article>
+  </div>
+
+  <div class="section-action">
+    <a class="btn light" href="#gifts">EXPLORE GIFT IDEAS</a>
+  </div>
+</section>
+
+<div class="ritual" id="philosophy">
+  <div class="ritual-img">
+    <img loading="lazy"
+      src="https://images.pexels.com/photos/8013648/pexels-photo-8013648.jpeg?auto=compress&cs=tinysrgb&w=1100"
+      alt="Handmade soaps with natural botanical styling">
+  </div>
+  <div class="ritual-content">
+    <span class="eyebrow">Our philosophy</span>
+    <h2>Made Slowly.<br><em>Enjoyed Daily.</em></h2>
+    <p>We believe that everyday care can feel extraordinary.
+    From thoughtful ingredients to the finishing touch,
+    our vision is to turn a simple bar of soap into a moment
+    worth slowing down for.</p>
+    <p>Nothing rushed. Nothing unnecessary.
+    Just a little more beauty in your day.</p>
+    <a class="btn light" href="#ingredients">OUR BOTANICAL INSPIRATION</a>
+  </div>
+</div>
+
+<section id="ingredients">
+  <div class="section-head">
+    <span class="eyebrow">From nature to your daily ritual</span>
+    <h2>Ingredients We Love</h2>
+    <p>Botanical inspiration for textures, fragrances and
+    colours that bring natural beauty into everyday care.</p>
+  </div>
+
+  <div class="ingredient-grid">
+    <div class="ingredient">
+      <div class="ingredient-icon">🌾</div>
+      <h3>Oats</h3>
+      <p>Soft, comforting inspiration for a simple routine.</p>
+    </div>
+    <div class="ingredient">
+      <div class="ingredient-icon">🌿</div>
+      <h3>Botanical Oils</h3>
+      <p>Inspired by plants and considered skincare rituals.</p>
+    </div>
+    <div class="ingredient">
+      <div class="ingredient-icon">🌸</div>
+      <h3>Lavender</h3>
+      <p>A classic botanical note with a tranquil character.</p>
+    </div>
+    <div class="ingredient">
+      <div class="ingredient-icon">🍋</div>
+      <h3>Citrus</h3>
+      <p>Bright, refreshing inspiration for a beautiful morning.</p>
+    </div>
+  </div>
+  <p style="text-align:center;font-size:11px;margin-top:22px">
+    Illustrative ingredients for a portfolio concept;
+    actual product formulas have not been verified.
+  </p>
+</section>
+
+<div class="gift" id="gifts">
+  <div class="gift-copy">
+    <span class="eyebrow">Little luxuries, lovely gifts</span>
+    <h2>The Art of<br><em>Thoughtful Giving.</em></h2>
+    <p>For birthdays, thank-you moments, holiday surprises
+    and well-deserved treats for yourself.</p>
+    <p>Beautiful botanical soaps make even the smallest
+    gesture feel a little more meaningful.</p>
+    <a class="btn" href="#newsletter">DISCOVER OUR GIFT EDIT</a>
+  </div>
+  <div class="gift-image">
+    <img loading="lazy"
+      src="https://images.pexels.com/photos/7615806/pexels-photo-7615806.jpeg?auto=compress&cs=tinysrgb&w=1100"
+      alt="Natural soap suitable for botanical gift inspiration">
+  </div>
+</div>
+
+<section class="quote">
+  <span class="eyebrow">A moment for yourself</span>
+  <blockquote>
+    “A beautiful day begins with the smallest acts of care.”
+  </blockquote>
+  <div class="caption">THE WILLOW &amp; BLOOM PHILOSOPHY</div>
+</section>
+
+<section class="newsletter" id="newsletter">
+  <span class="eyebrow">The Willow &amp; Bloom Letter</span>
+  <h2>Good Things Grow Here.</h2>
+  <p>A little botanical inspiration delivered to your inbox:
+  seasonal rituals, thoughtful gift ideas and first looks
+  at new collections.</p>
+  <form id="subscribe">
+    <input type="email" name="email" placeholder="Your email address"
+      aria-label="Your email address" required>
+    <button class="btn" type="submit">JOIN OUR LETTER</button>
+  </form>
+  <div id="notice" aria-live="polite"></div>
+  <p class="small">Portfolio demonstration only.
+  No email data is collected or stored.</p>
+</section>
+
+</main>
+
+<footer>
+  <div class="footer-grid">
+    <div>
+      <div class="brand">
+        Willow &amp; Bloom
+        <small style="text-align:left">BOTANICAL SOAP ATELIER</small>
+      </div>
+      <p>Nature-inspired care. Beautiful everyday rituals.</p>
+    </div>
+    <div>
+      <b style="font-size:12px;letter-spacing:1px">EXPLORE</b>
+      <a href="#collection">Our Soaps</a>
+      <a href="#ingredients">Ingredients</a>
+      <a href="#gifts">Gift Inspiration</a>
+    </div>
+    <div>
+      <b style="font-size:12px;letter-spacing:1px">DISCOVER</b>
+      <a href="#philosophy">Our Philosophy</a>
+      <a href="#newsletter">Our Letter</a>
+      <a href="#collection">Browse Collection</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Willow &amp; Bloom · Portfolio Concept</span>
+    <span class="demo">FICTIONAL BRAND · DESIGN DEMONSTRATION</span>
+  </div>
+</footer>
+
+<script>
+document.getElementById("subscribe").addEventListener("submit",function(e){
+ e.preventDefault();
+ document.getElementById("notice").textContent =
+  "Thank you! This is a demonstration — no email has been submitted.";
+ this.reset();
+});
+</script>
+</body>
+</html>
