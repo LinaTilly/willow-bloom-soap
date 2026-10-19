@@ -541,6 +541,97 @@ footer .brand small {
   .newsletter form {flex-direction:column}
   .footer-bottom {flex-direction:column}
 }
+
+/* COMPACT HERO */
+
+.hero {
+  min-height: 470px;
+}
+
+.hero-copy {
+  padding-top: 45px;
+  padding-bottom: 45px;
+}
+
+.hero-image img {
+  height: 470px;
+  min-height: 0;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* COMPACT PHILOSOPHY BLOCK */
+
+.editorial {
+  align-items: center;
+}
+
+.editorial-photo img {
+  height: 390px;
+  min-height: 0;
+  object-fit: cover;
+  object-position: center;
+}
+
+.editorial-text {
+  padding: 35px 9%;
+}
+
+.editorial h2 {
+  margin: 12px 0;
+}
+
+.editorial p {
+  margin: 8px 0;
+}
+
+/* TABLET */
+
+@media (max-width: 850px) and (min-width: 651px) {
+  .hero {
+    min-height: 440px;
+  }
+
+  .hero-image img {
+    height: 440px;
+    min-height: 0;
+  }
+}
+
+/* MOBILE */
+
+@media (max-width: 650px) {
+  .hero-image img {
+    height: 320px;
+    min-height: 0;
+  }
+
+  .editorial-photo img {
+    height: 290px;
+    min-height: 0;
+  }
+
+  .editorial-text {
+    padding: 35px 7%;
+  }
+}
+  .product-image img {
+  height: 310px;
+  object-fit: cover;
+}
+
+@media (max-width: 650px) {
+  .product-image img {
+    height: 230px;
+  }
+}
+
+@media (max-width: 430px) {
+  .product-image img {
+    height: 310px;
+  }
+}
+  
 </style>
 </head>
 
@@ -578,7 +669,7 @@ footer .brand small {
     <h1>
       Every Bar<br>
       a Little<br>
-      <em>Work of Art.</em>
+      <em>Work of Art</em>
     </h1>
 
     <p>
@@ -596,10 +687,10 @@ footer .brand small {
 
   <div class="hero-image">
 
-    <img
-      src="https://images.pexels.com/photos/6958981/pexels-photo-6958981.jpeg?auto=compress&cs=tinysrgb&w=1400"
-      alt="Handmade artisan soap with beautiful colourful marbled swirls"
-      fetchpriority="high">
+<img
+  src="https://images.pexels.com/photos/7173554/pexels-photo-7173554.jpeg?auto=compress&cs=tinysrgb&w=1400"
+  alt="Collection of handcrafted artisan soap bars"
+  fetchpriority="high">
 
     <div class="hero-label">
       HANDCRAFTED · ONE BAR AT A TIME
@@ -762,7 +853,7 @@ footer .brand small {
 
     <h2>
       Made Slowly.<br>
-      <em>Made Beautifully.</em>
+      <em>Made Beautifully</em>
     </h2>
 
     <p>
