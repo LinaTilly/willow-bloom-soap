@@ -1,1030 +1,908 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Willow & Bloom — a portfolio concept for handcrafted artisan swirl soaps and botanical self-care.">
-<title>Willow & Bloom | Artisan Soap Atelier</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Willow & Bloom — an editorial portfolio concept for handcrafted artisan swirl soaps.">
+<title>Willow & Bloom | Art You Can Feel</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
 
 <style>
 :root {
-  --cream:#FAF7F1;
-  --white:#FFFEFB;
-  --sage:#E5EBE2;
-  --olive:#536B59;
-  --deep:#344B3C;
-  --pink:#E9D3CC;
-  --rose:#BB897F;
-  --gold:#B39773;
-  --ink:#373C35;
-  --muted:#797B71;
-  --line:#E8E3DA;
+  --ivory:#FBF7F3;
+  --paper:#FFFDFA;
+  --blush:#EBCFC8;
+  --softpink:#F5E8E3;
+  --sage:#DDE4D9;
+  --olive:#687A68;
+  --charcoal:#353B34;
+  --muted:#73766D;
+  --border:#E8E1D9;
 }
 
 * {box-sizing:border-box}
-
 html {scroll-behavior:smooth}
-
 body {
   margin:0;
-  background:var(--cream);
-  color:var(--ink);
+  color:var(--charcoal);
+  background:var(--ivory);
   font-family:"DM Sans",Arial,sans-serif;
 }
-
 img {
-  width:100%;
   display:block;
+  width:100%;
   object-fit:cover;
 }
-
 a {color:inherit;text-decoration:none}
-
-h1,h2,h3,.brand,.serif {
-  font-family:"Playfair Display",Georgia,serif;
+button,input {font:inherit}
+button {cursor:pointer}
+h1,h2,h3,.logo,.serif {
+  font-family:"DM Serif Display",Georgia,serif;
   font-weight:400;
 }
-
+h1,h2,h3,p {margin-top:0}
 p {
+  font-size:14px;
   line-height:1.8;
   color:var(--muted);
 }
-
-button,input {font:inherit}
-
 .eyebrow {
   display:block;
   font-size:10px;
-  letter-spacing:3px;
-  text-transform:uppercase;
   font-weight:700;
-  color:var(--rose);
+  text-transform:uppercase;
+  letter-spacing:2.6px;
+  color:#95786E;
 }
-
 .btn {
   display:inline-flex;
-  justify-content:center;
   align-items:center;
-  min-height:50px;
+  justify-content:center;
   padding:15px 25px;
-  background:var(--deep);
+  min-height:48px;
+  background:var(--charcoal);
   color:white;
-  border:1px solid var(--deep);
+  border:1px solid var(--charcoal);
   font-size:11px;
   font-weight:700;
-  letter-spacing:1.7px;
+  letter-spacing:1.5px;
   text-transform:uppercase;
-  cursor:pointer;
   transition:.2s;
 }
-
-.btn:hover {
-  background:var(--olive);
-  border-color:var(--olive);
-}
-
-.btn-outline {
+.btn:hover {background:var(--olive);border-color:var(--olive)}
+.btn.outline {
   background:transparent;
-  color:var(--deep);
+  color:var(--charcoal);
 }
+.btn.outline:hover {background:var(--charcoal);color:white}
 
-.btn-outline:hover {color:white}
+/* HEADER */
 
-.topbar {
-  background:var(--deep);
-  color:#FFF9F1;
-  padding:12px 15px;
+.announcement {
+  padding:10px 15px;
+  background:var(--softpink);
   text-align:center;
   font-size:10px;
   letter-spacing:2px;
 }
-
-header {
+.header {
+  display:grid;
+  grid-template-columns:1fr auto 1fr;
+  align-items:center;
+  padding:22px 6%;
+  background:var(--paper);
+}
+.nav-left,.nav-right {
   display:flex;
   align-items:center;
-  justify-content:space-between;
-  padding:20px 6%;
-  background:var(--white);
-  gap:25px;
-}
-
-.brand {
-  font-size:28px;
-  white-space:nowrap;
-  letter-spacing:1px;
-}
-
-.brand small {
-  display:block;
-  text-align:center;
-  font-family:"DM Sans",sans-serif;
-  font-size:8px;
-  font-weight:700;
-  letter-spacing:3px;
-  color:var(--rose);
-  margin-top:8px;
-}
-
-nav {
-  display:flex;
-  gap:30px;
+  gap:24px;
   font-size:11px;
-  letter-spacing:1px;
+  letter-spacing:.5px;
+}
+.nav-right {justify-content:flex-end}
+.header a:hover {color:var(--olive)}
+.logo {
+  text-align:center;
+  font-size:35px;
+  white-space:nowrap;
+  line-height:1;
+}
+.logo small {
+  display:block;
+  margin-top:10px;
+  font:700 9px "DM Sans",sans-serif;
+  letter-spacing:3.5px;
+  color:#9B7D74;
 }
 
-nav a:hover {color:var(--rose)}
+/* HERO — FULL BLEED */
 
 .hero {
-  display:grid;
-  grid-template-columns:46% 54%;
-  min-height:615px;
-}
-
-.hero-copy {
-  padding:75px 10% 75px 13%;
-  display:flex;
-  flex-direction:column;
-  align-items:flex-start;
-  justify-content:center;
-}
-
-.hero h1 {
-  font-size:clamp(43px,5.4vw,78px);
-  line-height:1.12;
-  margin:22px 0;
-}
-
-.hero h1 em {
-  color:var(--rose);
-  font-weight:400;
-}
-
-.hero p {
-  max-width:435px;
-  font-size:15px;
-  margin:0 0 30px;
-}
-
-.hero-image {
   position:relative;
-  background:#E6D9D2;
+  min-height:585px;
+  background:#DDCFC4;
   overflow:hidden;
 }
-
-.hero-image img {
-  height:100%;
-  min-height:570px;
-}
-
-.hero-label {
+.hero>img {
   position:absolute;
-  left:25px;
-  bottom:25px;
-  padding:13px 18px;
-  background:rgba(255,254,251,.92);
+  inset:0;
+  height:100%;
+  width:100%;
+  object-position:center 48%;
+}
+.hero::after {
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(
+    90deg,
+    rgba(41,43,37,.16),
+    rgba(41,43,37,0) 65%
+  );
+  pointer-events:none;
+}
+.hero-panel {
+  position:relative;
+  z-index:1;
+  width:min(465px,43%);
+  margin:82px 0 75px 7%;
+  padding:43px 40px;
+  background:rgba(255,253,250,.94);
+  backdrop-filter:blur(3px);
+}
+.hero h1 {
+  font-size:clamp(48px,5vw,77px);
+  line-height:1.02;
+  margin:19px 0 22px;
+}
+.hero h1 em {
+  font-weight:400;
+  color:#9F7C78;
+}
+.hero p {max-width:335px;margin-bottom:27px}
+.hero-bottom {
+  position:absolute;
+  z-index:2;
+  bottom:20px;
+  right:6%;
+  color:white;
+  text-shadow:0 1px 5px #5557;
   font-size:10px;
   letter-spacing:2px;
-}
-
-.benefits {
-  background:var(--sage);
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-}
-
-.benefit {
-  text-align:center;
-  padding:27px 15px;
-  border-right:1px solid #D2DACF;
-}
-
-.benefit:last-child {border:0}
-
-.benefit span {
-  display:block;
-  margin-bottom:8px;
-  font-size:23px;
-  color:var(--olive);
-}
-
-.benefit b {
-  font-size:10px;
-  letter-spacing:1.6px;
   text-transform:uppercase;
 }
 
-section {padding:85px 6%}
+/* INTRO */
 
-.section-head {
-  max-width:650px;
-  margin:0 auto 40px;
+.intro {
   text-align:center;
+  padding:65px 8% 70px;
+  background:var(--paper);
 }
-
-.section-head h2 {
-  font-size:clamp(34px,4vw,51px);
-  margin:15px 0;
+.intro h2 {
+  max-width:820px;
+  margin:17px auto;
+  font-size:clamp(30px,4vw,49px);
+  line-height:1.25;
 }
+.intro h2 em {color:#A1847D}
+.intro p {max-width:650px;margin:auto}
 
-.section-head p {font-size:14px}
+/* EDITORIAL COLLECTION */
 
-.products {
+.collection {
+  padding:85px 6%;
+  background:var(--ivory);
+}
+.section-title {
+  display:flex;
+  align-items:end;
+  justify-content:space-between;
+  gap:25px;
+  margin-bottom:35px;
+}
+.section-title h2 {
+  font-size:clamp(34px,4.4vw,60px);
+  margin:12px 0 0;
+  line-height:1.1;
+}
+.section-title p {
+  max-width:350px;
+  margin-bottom:5px;
+}
+.soap-gallery {
   display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:24px;
+  grid-template-columns:1.15fr .85fr 1fr;
+  gap:20px;
+  align-items:start;
 }
-
-.product-image {
-  position:relative;
-  background:#EBE3DA;
+.soap-card {min-width:0}
+.soap-card:nth-child(2) {margin-top:62px}
+.soap-card:nth-child(3) {margin-top:24px}
+.soap-image {
+  background:#E9DDD4;
   overflow:hidden;
+  position:relative;
 }
-
-.product-image img {
+.soap-image img {
   height:360px;
-  transition:transform .5s ease;
+  transition:transform .4s ease;
 }
-
-.product:hover .product-image img {
-  transform:scale(1.035);
-}
-
-.tag {
+.soap-card:first-child .soap-image img {height:440px}
+.soap-card:nth-child(2) .soap-image img {height:285px}
+.soap-card:hover img {transform:scale(1.035)}
+.soap-label {
   position:absolute;
-  top:14px;
   left:14px;
-  z-index:1;
-  padding:9px 12px;
-  background:rgba(255,254,251,.94);
+  top:14px;
+  background:#FFFDFAED;
+  padding:8px 11px;
   font-size:9px;
-  letter-spacing:1.2px;
   text-transform:uppercase;
-  color:var(--deep);
+  letter-spacing:1.3px;
 }
-
-.product h3 {
-  font-size:24px;
-  margin:18px 0 6px;
+.soap-card h3 {
+  font-size:28px;
+  margin:17px 0 6px;
 }
-
-.product p {
+.soap-card p {font-size:12px;margin-bottom:6px}
+.soap-price {
   font-size:12px;
-  margin:0 0 7px;
-}
-
-.price {
-  font-size:12px;
-  color:#9E7C67;
+  color:#9E7D73;
   font-weight:700;
 }
-
-.section-action {
-  margin-top:40px;
-  text-align:center;
-}
-
-.editorial {
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  background:var(--sage);
-}
-
-.editorial-photo img {
-  height:100%;
-  min-height:520px;
-}
-
-.editorial-text {
-  padding:65px 12%;
+.collection-footer {
   display:flex;
-  flex-direction:column;
-  align-items:flex-start;
-  justify-content:center;
+  justify-content:space-between;
+  gap:25px;
+  align-items:center;
+  padding-top:42px;
 }
+.collection-footer p {max-width:460px;margin:0}
 
-.editorial h2 {
-  font-size:clamp(36px,4vw,56px);
-  line-height:1.2;
-  margin:18px 0;
-}
+/* MARQUEE */
 
-.editorial h2 em {
-  color:var(--olive);
-}
-
-.editorial p {
-  max-width:460px;
-  font-size:14px;
-}
-
-.ingredients {
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:18px;
-  margin-top:35px;
-}
-
-.ingredient {
+.marquee {
+  padding:22px 15px;
   text-align:center;
-  background:var(--white);
-  border:1px solid var(--line);
-  padding:34px 15px;
+  background:var(--blush);
+  font:400 clamp(15px,2.3vw,25px) "DM Serif Display",Georgia,serif;
+  letter-spacing:1px;
 }
+.marquee span {color:#9A746D;margin:0 16px}
 
-.ingredient .symbol {
-  font-size:29px;
-  margin-bottom:15px;
+/* ART OF THE SWIRL */
+
+.art-section {
+  background:#F2EBE5;
+  padding:90px 6%;
 }
-
-.ingredient h3 {
-  font-size:22px;
-  margin:8px 0;
-}
-
-.ingredient p {font-size:12px}
-
-.gift {
+.art-grid {
   display:grid;
-  grid-template-columns:1fr 1fr;
-  background:#F1E5E0;
+  grid-template-columns:.85fr 1.15fr;
+  gap:7%;
+  align-items:center;
 }
-
-.gift-copy {
-  padding:65px 11%;
-  display:flex;
-  flex-direction:column;
-  align-items:flex-start;
-  justify-content:center;
+.art-copy h2 {
+  margin:20px 0;
+  font-size:clamp(38px,5vw,66px);
+  line-height:1.12;
 }
-
-.gift h2 {
-  font-size:clamp(36px,4vw,55px);
-  margin:17px 0;
-  line-height:1.2;
+.art-copy h2 em {color:#9C7D75}
+.art-copy p {max-width:460px}
+.art-copy .btn {margin-top:14px}
+.art-photo {
+  padding:16px;
+  background:#FFFBF6;
+  transform:rotate(1deg);
+  box-shadow:0 14px 35px #61524413;
 }
-
-.gift h2 em {color:var(--rose)}
-
-.gift-photo img {
-  height:100%;
-  min-height:470px;
+.art-photo img {
+  height:420px;
+  object-fit:cover;
+  object-position:center;
 }
-
-.quote {
-  background:var(--white);
+.art-caption {
   text-align:center;
-}
-
-.quote blockquote {
-  max-width:790px;
-  margin:25px auto;
-  font-family:"Playfair Display",Georgia,serif;
-  color:var(--olive);
-  font-size:clamp(25px,3vw,39px);
-  line-height:1.5;
-}
-
-.quote-caption {
+  padding:15px 0 4px;
   font-size:10px;
   letter-spacing:2px;
-  color:var(--rose);
+  color:#8E776E;
 }
+
+/* INGREDIENTS */
+
+.nature {
+  background:var(--paper);
+  padding:85px 6%;
+}
+.nature-head {
+  text-align:center;
+  max-width:640px;
+  margin:0 auto 40px;
+}
+.nature-head h2 {
+  font-size:clamp(36px,4vw,54px);
+  margin:15px 0;
+}
+.nature-grid {
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:1px;
+  background:var(--border);
+  border:1px solid var(--border);
+}
+.nature-item {
+  background:var(--paper);
+  text-align:center;
+  padding:40px 24px;
+}
+.nature-symbol {
+  font-size:32px;
+  color:var(--olive);
+  margin-bottom:17px;
+}
+.nature-item h3 {font-size:25px;margin:0 0 10px}
+.nature-item p {font-size:12px;max-width:250px;margin:auto}
+
+/* GIFT ATELIER */
+
+.gift {
+  background:var(--sage);
+  padding:70px 6%;
+}
+.gift-layout {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  align-items:center;
+  gap:7%;
+}
+.gift-images {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:12px;
+  align-items:start;
+}
+.gift-images img:first-child {height:340px}
+.gift-images img:last-child {
+  height:255px;
+  margin-top:55px;
+}
+.gift-copy h2 {
+  font-size:clamp(37px,4vw,57px);
+  margin:18px 0;
+  line-height:1.16;
+}
+.gift-copy p {max-width:420px}
+.gift-copy .btn {margin-top:10px}
+
+/* QUOTE */
+
+.statement {
+  padding:80px 8%;
+  text-align:center;
+  background:var(--ivory);
+}
+.statement blockquote {
+  max-width:880px;
+  margin:25px auto;
+  font:400 clamp(28px,3.6vw,49px)/1.3 "DM Serif Display",serif;
+  color:#657A68;
+}
+.statement em {color:#AD8780}
+
+/* NEWSLETTER */
 
 .newsletter {
+  background:var(--softpink);
+  padding:75px 6%;
   text-align:center;
-  background:#E8EEE5;
 }
-
 .newsletter h2 {
-  font-size:clamp(34px,4vw,50px);
-  margin:14px 0;
+  font-size:clamp(36px,4.5vw,58px);
+  margin:16px 0;
 }
-
-.newsletter p {
-  max-width:550px;
-  margin:12px auto 25px;
-}
-
+.newsletter p {max-width:520px;margin:0 auto 25px}
 .newsletter form {
-  max-width:530px;
-  margin:0 auto;
+  max-width:550px;
+  margin:auto;
   display:flex;
   gap:8px;
 }
-
 .newsletter input {
   flex:1;
   min-width:0;
+  border:1px solid #D2BEB5;
   padding:15px;
-  border:1px solid #BAC6B8;
-  background:white;
-  font-size:13px;
+  background:var(--paper);
+}
+#form-message {
+  min-height:24px;
+  padding-top:12px;
+  font-size:12px;
+  color:var(--charcoal);
+}
+.disclaimer {
+  font-size:10px;
+  margin-top:8px;
 }
 
-#message {
-  min-height:20px;
-  margin-top:12px;
-  color:var(--deep);
-  font-size:12px;
-}
+/* FOOTER */
 
 footer {
-  background:var(--deep);
+  background:#39463B;
   color:white;
   padding:50px 6% 25px;
 }
-
-.footer-grid {
-  display:grid;
-  grid-template-columns:2fr 1fr 1fr;
+.footer-content {
+  display:flex;
+  justify-content:space-between;
   gap:30px;
 }
-
-footer p,footer a {
-  font-size:12px;
-  color:#DEE6DC;
-}
-
-footer a {
+footer .logo {text-align:left}
+footer .logo small {color:#D8C4BC;text-align:left}
+footer p {color:#D8E0D7;font-size:12px}
+.footer-links {display:flex;gap:40px}
+.footer-links a {
   display:block;
-  margin-top:12px;
+  margin:10px 0;
+  font-size:12px;
+  color:#E8ECE5;
 }
-
-footer .brand small {
-  text-align:left;
-  color:#E7C8B9;
-}
-
-.footer-bottom {
-  border-top:1px solid #677B6A;
-  padding-top:22px;
-  margin-top:40px;
+.footer-end {
+  border-top:1px solid #788577;
+  margin-top:42px;
+  padding-top:20px;
   display:flex;
   justify-content:space-between;
   gap:15px;
-  color:#DCE4D8;
   font-size:10px;
-}
-
-@media(max-width:850px) {
-  nav {gap:13px}
-  .hero {min-height:500px}
-  .hero-copy {padding:50px 8%}
-  .hero-image img {min-height:480px}
-  .products {gap:14px}
-  .product-image img {height:265px}
-  .ingredients {grid-template-columns:repeat(2,1fr)}
-}
-
-@media(max-width:650px) {
-  header {
-    flex-direction:column;
-    padding:17px 5%;
-  }
-
-  nav {
-    flex-wrap:wrap;
-    justify-content:center;
-    gap:15px;
-  }
-
-  .hero,.editorial,.gift {
-    grid-template-columns:1fr;
-  }
-
-  .hero-copy {padding:55px 7%}
-
-  .hero-image img {
-    height:350px;
-    min-height:0;
-  }
-
-  .benefits {grid-template-columns:1fr}
-
-  .benefit {
-    padding:17px;
-    border-right:0;
-    border-bottom:1px solid #D2DACF;
-  }
-
-  section {padding:58px 5%}
-
-  .products {grid-template-columns:1fr 1fr}
-
-  .product-image img {height:240px}
-
-  .product h3 {font-size:20px}
-
-  .editorial-text,.gift-copy {padding:48px 7%}
-
-  .editorial-photo img,
-  .gift-photo img {
-    height:340px;
-    min-height:0;
-  }
-
-  .footer-grid {grid-template-columns:1fr 1fr}
-
-  .footer-grid>div:first-child {
-    grid-column:span 2;
-  }
-}
-
-@media(max-width:430px) {
-  .products {grid-template-columns:1fr}
-  .product-image img {height:345px}
-  .ingredients {gap:10px}
-  .newsletter form {flex-direction:column}
-  .footer-bottom {flex-direction:column}
-}
-
-/* COMPACT HERO */
-
-.hero {
-  min-height: 470px;
-}
-
-.hero-copy {
-  padding-top: 45px;
-  padding-bottom: 45px;
-}
-
-.hero-image img {
-  height: 470px;
-  min-height: 0;
-  object-fit: cover;
-  object-position: center;
-}
-
-/* COMPACT PHILOSOPHY BLOCK */
-
-.editorial {
-  align-items: center;
-}
-
-.editorial-photo img {
-  height: 390px;
-  min-height: 0;
-  object-fit: cover;
-  object-position: center;
-}
-
-.editorial-text {
-  padding: 35px 9%;
-}
-
-.editorial h2 {
-  margin: 12px 0;
-}
-
-.editorial p {
-  margin: 8px 0;
+  color:#DAE1D8;
 }
 
 /* TABLET */
 
-@media (max-width: 850px) and (min-width: 651px) {
-  .hero {
-    min-height: 440px;
+@media(max-width:950px) {
+  .header {
+    grid-template-columns:1fr;
+    text-align:center;
+    gap:16px;
   }
-
-  .hero-image img {
-    height: 440px;
-    min-height: 0;
-  }
+  .header .logo {grid-row:1}
+  .nav-left,.nav-right {justify-content:center}
+  .hero-panel {width:min(450px,55%)}
+  .soap-gallery {gap:12px}
+  .soap-card h3 {font-size:23px}
+  .art-photo img {height:360px}
 }
 
 /* MOBILE */
 
-@media (max-width: 650px) {
-  .hero-image img {
-    height: 320px;
-    min-height: 0;
+@media(max-width:680px) {
+  .header {padding:19px 4%}
+  .logo {font-size:30px}
+  .nav-left {gap:17px}
+  .nav-right {display:none}
+
+  .hero {
+    min-height:0;
+    display:flex;
+    flex-direction:column;
+    background:var(--ivory);
+  }
+  .hero>img {
+    position:relative;
+    height:355px;
+    object-position:center;
+    order:1;
+  }
+  .hero::after {display:none}
+  .hero-panel {
+    order:2;
+    width:auto;
+    margin:0;
+    padding:37px 7% 45px;
+    background:var(--ivory);
+  }
+  .hero h1 {font-size:56px}
+  .hero-bottom {display:none}
+
+  .intro {padding:55px 6%}
+
+  .collection {padding:60px 5%}
+  .section-title {
+    display:block;
+    margin-bottom:26px;
+  }
+  .section-title p {margin-top:17px}
+  .soap-gallery {
+    grid-template-columns:1fr 1fr;
+    gap:19px 12px;
+  }
+  .soap-card:nth-child(2),
+  .soap-card:nth-child(3) {margin-top:0}
+  .soap-card:first-child {grid-column:span 2}
+  .soap-card:first-child .soap-image img {height:370px}
+  .soap-image img,
+  .soap-card:nth-child(2) .soap-image img {height:230px}
+  .soap-card h3 {font-size:21px}
+  .collection-footer {
+    align-items:start;
+    flex-direction:column;
   }
 
-  .editorial-photo img {
-    height: 290px;
-    min-height: 0;
-  }
+  .art-section {padding:65px 6%}
+  .art-grid {grid-template-columns:1fr;gap:35px}
+  .art-photo {grid-row:1;transform:none}
+  .art-photo img {height:340px}
+  .art-copy h2 {font-size:49px}
 
-  .editorial-text {
-    padding: 35px 7%;
-  }
-}
-  .product-image img {
-  height: 310px;
-  object-fit: cover;
+  .nature {padding:65px 6%}
+  .nature-grid {grid-template-columns:1fr}
+  .nature-item {padding:28px 20px}
+
+  .gift {padding:60px 6%}
+  .gift-layout {grid-template-columns:1fr;gap:38px}
+  .gift-images img:first-child {height:310px}
+  .gift-images img:last-child {height:250px;margin-top:38px}
+  .statement {padding:65px 7%}
+  .newsletter {padding:65px 6%}
+  .newsletter form {flex-direction:column}
+  .footer-content {flex-direction:column}
+  .footer-links {gap:45px}
+  .footer-end {flex-direction:column}
 }
 
-@media (max-width: 650px) {
-  .product-image img {
-    height: 230px;
-  }
+@media(max-width:420px) {
+  .hero h1 {font-size:48px}
+  .soap-card:first-child .soap-image img {height:300px}
+  .soap-image img,
+  .soap-card:nth-child(2) .soap-image img {height:190px}
+  .soap-card h3 {font-size:18px}
+  .soap-price {font-size:10px}
+  .art-photo img {height:270px}
 }
-
-@media (max-width: 430px) {
-  .product-image img {
-    height: 310px;
-  }
-}
-  
 </style>
 </head>
 
 <body>
 
-<div class="topbar">
-  HANDCRAFTED SWIRL SOAP · A LITTLE ART IN EVERY BAR
+<div class="announcement">
+  HANDCRAFTED BEAUTY · LITTLE MOMENTS OF EVERYDAY JOY
 </div>
 
-<header>
-  <a href="#" class="brand">
+<header class="header">
+
+  <nav class="nav-left" aria-label="Main navigation">
+    <a href="#collection">The Collection</a>
+    <a href="#art">The Process</a>
+  </nav>
+
+  <a href="#" class="logo">
     Willow &amp; Bloom
-    <small>ARTISAN SOAP ATELIER</small>
+    <small>ARTISAN SOAP STUDIO</small>
   </a>
 
-  <nav aria-label="Main navigation">
-    <a href="#collection">Our Soaps</a>
-    <a href="#philosophy">Our Story</a>
-    <a href="#ingredients">Ingredients</a>
-    <a href="#gifts">Gift Sets</a>
+  <nav class="nav-right">
+    <a href="#gifts">Gift Atelier</a>
+    <a href="#newsletter">Join Our Letter ↗</a>
   </nav>
+
 </header>
 
 <main>
 
 <!-- HERO -->
 
-<div class="hero">
-  <div class="hero-copy">
+<section class="hero" aria-label="Willow and Bloom handmade soap">
 
-    <span class="eyebrow">
-      Handcrafted beauty, naturally inspired
-    </span>
+  <img
+    src="https://images.pexels.com/photos/6958981/pexels-photo-6958981.jpeg?auto=compress&cs=tinysrgb&w=1600"
+    alt="Artisan handmade soaps with decorative colours and patterns"
+    fetchpriority="high">
+
+  <div class="hero-panel">
+
+    <span class="eyebrow">The beauty of handmade things</span>
 
     <h1>
-      Every Bar<br>
-      a Little<br>
-      <em>Work of Art</em>
+      Art You<br>
+      Can <em>Feel</em>
     </h1>
 
     <p>
-      Discover beautifully handcrafted swirl soaps,
-      where flowing colours, delicate patterns
-      and thoughtful details make everyday care
-      feel extraordinary.
+      Beautifully swirled, thoughtfully handcrafted
+      soaps made to bring a little artistry to
+      your everyday rituals.
     </p>
 
     <a class="btn" href="#collection">
-      DISCOVER OUR SOAP COLLECTION
-    </a>
-
-  </div>
-
-  <div class="hero-image">
-
-<img
-  src="https://images.pexels.com/photos/7173554/pexels-photo-7173554.jpeg?auto=compress&cs=tinysrgb&w=1400"
-  alt="Collection of handcrafted artisan soap bars"
-  fetchpriority="high">
-
-    <div class="hero-label">
-      HANDCRAFTED · ONE BAR AT A TIME
-    </div>
-
-  </div>
-</div>
-
-<!-- BENEFITS -->
-
-<div class="benefits">
-
-  <div class="benefit">
-    <span>✿</span>
-    <b>Beautifully Handcrafted</b>
-  </div>
-
-  <div class="benefit">
-    <span>♡</span>
-    <b>Small Batch Artistry</b>
-  </div>
-
-  <div class="benefit">
-    <span>❋</span>
-    <b>Uniquely Marbled Designs</b>
-  </div>
-
-</div>
-
-<!-- COLLECTION -->
-
-<section id="collection">
-
-  <div class="section-head">
-
-    <span class="eyebrow">
-      The artisan swirl collection
-    </span>
-
-    <h2>
-      Beautifully Different.<br>
-      Naturally Inspired.
-    </h2>
-
-    <p>
-      No two swirls are exactly alike.
-      Explore handmade soaps inspired by
-      the soft colours and organic patterns of nature.
-    </p>
-
-  </div>
-
-  <div class="products">
-
-    <article class="product">
-
-      <div class="product-image">
-
-        <span class="tag">Soft &amp; Romantic</span>
-
-        <img
-          loading="lazy"
-          src="https://images.pexels.com/photos/6958981/pexels-photo-6958981.jpeg?auto=compress&cs=tinysrgb&w=850"
-          alt="Rose-inspired handcrafted soap with colourful swirls">
-
-      </div>
-
-      <h3>Rose Marble</h3>
-
-      <p>
-        Flowing colour and delicate artistic detail.
-      </p>
-
-      <div class="price">
-        CA$12 · SAMPLE PRICE
-      </div>
-
-    </article>
-
-    <article class="product">
-
-      <div class="product-image">
-
-        <span class="tag">Artisan Favourite</span>
-
-        <img
-          loading="lazy"
-          src="https://images.pexels.com/photos/6930861/pexels-photo-6930861.jpeg?auto=compress&cs=tinysrgb&w=850"
-          alt="Artisan handcrafted swirled soap bars">
-
-      </div>
-
-      <h3>Botanical Swirl</h3>
-
-      <p>
-        Beautiful natural textures and gentle tones.
-      </p>
-
-      <div class="price">
-        CA$13 · SAMPLE PRICE
-      </div>
-
-    </article>
-
-    <article class="product">
-
-      <div class="product-image">
-
-        <span class="tag">Signature Design</span>
-
-        <img
-          loading="lazy"
-          src="https://images.pexels.com/photos/20620260/pexels-photo-20620260.jpeg?auto=compress&cs=tinysrgb&w=850"
-          alt="Handcrafted soap with expressive dark and cream swirl patterns">
-
-      </div>
-
-      <h3>Artisan Signature</h3>
-
-      <p>
-        Unexpected patterns in every handcrafted bar.
-      </p>
-
-      <div class="price">
-        CA$14 · SAMPLE PRICE
-      </div>
-
-    </article>
-
-  </div>
-
-  <div class="section-action">
-
-    <a class="btn btn-outline" href="#gifts">
-      EXPLORE GIFT IDEAS
-    </a>
-
-  </div>
-
-</section>
-
-<!-- PHILOSOPHY -->
-
-<div class="editorial" id="philosophy">
-
-  <div class="editorial-photo">
-
-    <img
-      loading="lazy"
-      src="https://images.pexels.com/photos/6621464/pexels-photo-6621464.jpeg?auto=compress&cs=tinysrgb&w=1100"
-      alt="Colourful handmade soaps displayed on a light background">
-
-  </div>
-
-  <div class="editorial-text">
-
-    <span class="eyebrow">
-      The Willow &amp; Bloom Philosophy
-    </span>
-
-    <h2>
-      Made Slowly.<br>
-      <em>Made Beautifully</em>
-    </h2>
-
-    <p>
-      Every handcrafted bar is a little different.
-      Colours meet, blend and flow to create
-      beautiful patterns that can never be
-      repeated in exactly the same way.
-    </p>
-
-    <p>
-      We celebrate the beauty of handmade things,
-      thoughtful craftsmanship and the simple
-      pleasure of turning everyday routines
-      into something special.
-    </p>
-
-    <a class="btn btn-outline" href="#collection">
       EXPLORE THE COLLECTION
     </a>
 
   </div>
 
-</div>
+  <div class="hero-bottom">
+    SMALL BATCH · ARTISAN SOAP · NATURALLY INSPIRED
+  </div>
 
-<!-- INGREDIENT INSPIRATION -->
+</section>
 
-<section id="ingredients">
+<!-- BRAND INTRO -->
 
-  <div class="section-head">
+<section class="intro">
 
-    <span class="eyebrow">
-      Inspired by nature
-    </span>
+  <span class="eyebrow">
+    Not just soap. A little work of art
+  </span>
 
-    <h2>
-      Beautiful Details.<br>
-      Thoughtful Inspiration.
-    </h2>
+  <h2>
+    Where everyday care meets
+    <em>beautifully imperfect artistry</em>
+  </h2>
+
+  <p>
+    Every swirl tells a different story.
+    We celebrate the beauty of handcrafted details,
+    flowing colours and the simple pleasure
+    of slowing down.
+  </p>
+
+</section>
+
+<!-- COLLECTION -->
+
+<section class="collection" id="collection">
+
+  <div class="section-title">
+
+    <div>
+      <span class="eyebrow">The Swirl Collection</span>
+      <h2>Beauty in Every Detail</h2>
+    </div>
 
     <p>
-      Natural colours, botanical inspiration and
-      artisan techniques come together in a celebration
-      of simple beauty.
+      Three different moods, endless little details
+      and the charm of handmade patterns
     </p>
 
   </div>
 
-  <div class="ingredients">
+  <div class="soap-gallery">
 
-    <div class="ingredient">
+    <article class="soap-card">
 
-      <div class="symbol">🌸</div>
+      <div class="soap-image">
+        <span class="soap-label">THE SIGNATURE EDIT</span>
 
-      <h3>Soft Botanicals</h3>
+        <img
+          src="https://images.pexels.com/photos/6930861/pexels-photo-6930861.jpeg?auto=compress&cs=tinysrgb&w=1050"
+          alt="Artisan handmade soap with decorative swirl design"
+          loading="lazy">
+      </div>
+
+      <h3>Rose Marble</h3>
+      <p>Soft colour, delicate movement and artisanal character</p>
+      <div class="soap-price">FROM CA$12 · DEMO PRICE</div>
+
+    </article>
+
+    <article class="soap-card">
+
+      <div class="soap-image">
+        <span class="soap-label">EVERYDAY BEAUTY</span>
+
+        <img
+          src="https://images.pexels.com/photos/6690221/pexels-photo-6690221.jpeg?auto=compress&cs=tinysrgb&w=850"
+          alt="Botanical handmade soap with natural greenery"
+          loading="lazy">
+      </div>
+
+      <h3>Botanical Swirl</h3>
+      <p>Nature-inspired tones for a beautiful routine</p>
+      <div class="soap-price">FROM CA$13 · DEMO PRICE</div>
+
+    </article>
+
+    <article class="soap-card">
+
+      <div class="soap-image">
+        <span class="soap-label">ARTISAN EDITION</span>
+
+        <img
+          src="https://images.pexels.com/photos/20620260/pexels-photo-20620260.jpeg?auto=compress&cs=tinysrgb&w=850"
+          alt="Handcrafted soap with expressive artistic patterns"
+          loading="lazy">
+      </div>
+
+      <h3>Mineral Muse</h3>
+      <p>Expressive textures and unexpected combinations</p>
+      <div class="soap-price">FROM CA$14 · DEMO PRICE</div>
+
+    </article>
+
+  </div>
+
+  <div class="collection-footer">
+    <p>
+      Just like the natural world, handmade patterns
+      are never perfectly identical. That is
+      part of their beauty.
+    </p>
+    <a href="#art" class="btn outline">
+      THE ART BEHIND THE SOAP
+    </a>
+  </div>
+
+</section>
+
+<div class="marquee">
+  Handcrafted <span>✳</span>
+  Thoughtful <span>✳</span>
+  Beautifully Different
+</div>
+
+<!-- THE ART OF THE SWIRL -->
+
+<section class="art-section" id="art">
+
+  <div class="art-grid">
+
+    <div class="art-copy">
+
+      <span class="eyebrow">
+        The Art of the Swirl
+      </span>
+
+      <h2>
+        Made Slowly<br>
+        <em>Made Beautifully</em>
+      </h2>
 
       <p>
-        Delicate floral inspiration and
-        beautiful natural tones.
+        The beauty of artisan soap lies in the
+        unexpected — the way colours flow,
+        textures meet and every finished piece
+        develops a personality of its own.
       </p>
+
+      <p>
+        Small variations are part of the process,
+        creating pieces that feel individual,
+        expressive and wonderfully handmade.
+      </p>
+
+      <a href="#collection" class="btn outline">
+        EXPLORE THE COLLECTION
+      </a>
 
     </div>
 
-    <div class="ingredient">
+    <div class="art-photo">
 
-      <div class="symbol">🌿</div>
+      <img
+        src="https://images.pexels.com/photos/8013648/pexels-photo-8013648.jpeg?auto=compress&cs=tinysrgb&w=1000"
+        alt="Artisan soap presented with botanical styling"
+        loading="lazy">
 
-      <h3>Botanical Oils</h3>
-
-      <p>
-        Nature-inspired ideas for
-        everyday care rituals.
-      </p>
-
-    </div>
-
-    <div class="ingredient">
-
-      <div class="symbol">🎨</div>
-
-      <h3>Artisan Swirls</h3>
-
-      <p>
-        Unique flowing patterns
-        in each handcrafted bar.
-      </p>
-
-    </div>
-
-    <div class="ingredient">
-
-      <div class="symbol">♡</div>
-
-      <h3>Made with Care</h3>
-
-      <p>
-        Small-batch craftsmanship
-        and thoughtful finishing details.
-      </p>
+      <div class="art-caption">
+        THE BEAUTY OF HANDCRAFTED DETAILS
+      </div>
 
     </div>
 
   </div>
 
-  <p style="text-align:center;font-size:11px;margin-top:24px;">
-    Portfolio concept: actual product ingredients and
-    formulas must be confirmed with the maker.
-  </p>
+</section>
+
+<!-- INGREDIENT INSPIRATION -->
+
+<section class="nature" id="ingredients">
+
+  <div class="nature-head">
+
+    <span class="eyebrow">Inspired by nature</span>
+
+    <h2>Botanical Inspiration</h2>
+
+    <p>
+      Organic forms, natural textures and delicate
+      colours provide endless inspiration for
+      everyday handmade beauty.
+    </p>
+
+  </div>
+
+  <div class="nature-grid">
+
+    <div class="nature-item">
+      <div class="nature-symbol">✿</div>
+      <h3>Soft Botanicals</h3>
+      <p>Floral colours and nature-inspired details</p>
+    </div>
+
+    <div class="nature-item">
+      <div class="nature-symbol">❋</div>
+      <h3>Artistic Swirls</h3>
+      <p>Unique patterns in every handcrafted piece</p>
+    </div>
+
+    <div class="nature-item">
+      <div class="nature-symbol">♡</div>
+      <h3>Thoughtful Craft</h3>
+      <p>Celebrating small-batch creative work</p>
+    </div>
+
+  </div>
 
 </section>
 
 <!-- GIFT SECTION -->
 
-<div class="gift" id="gifts">
+<section class="gift" id="gifts">
 
-  <div class="gift-copy">
+  <div class="gift-layout">
 
-    <span class="eyebrow">
-      Beautiful gifts, thoughtfully made
-    </span>
+    <div class="gift-images">
 
-    <h2>
-      Small Gifts.<br>
-      <em>Beautiful Moments.</em>
-    </h2>
+      <img
+        src="https://images.pexels.com/photos/7615814/pexels-photo-7615814.jpeg?auto=compress&cs=tinysrgb&w=800"
+        alt="Natural soap with botanical gift styling"
+        loading="lazy">
 
-    <p>
-      A handcrafted bar of soap can be more than
-      an everyday essential.
-    </p>
+      <img
+        src="https://images.pexels.com/photos/4889034/pexels-photo-4889034.jpeg?auto=compress&cs=tinysrgb&w=700"
+        alt="Natural soap with spa-inspired accessories"
+        loading="lazy">
 
-    <p>
-      With its artistic swirls and thoughtful
-      presentation, it becomes a lovely little
-      gift for birthdays, holidays, thank-you
-      moments or simply treating yourself.
-    </p>
+    </div>
 
-    <a class="btn" href="#newsletter">
-      DISCOVER OUR GIFT EDIT
-    </a>
+    <div class="gift-copy">
+
+      <span class="eyebrow">The Gift Atelier</span>
+
+      <h2>
+        Little Gifts<br>
+        Lovely Moments
+      </h2>
+
+      <p>
+        There is something especially thoughtful
+        about a gift made by hand.
+      </p>
+
+      <p>
+        Beautifully designed soaps make sweet
+        gestures for birthdays, thank-you moments,
+        seasonal celebrations and a little
+        self-care.
+      </p>
+
+      <a href="#newsletter" class="btn">
+        GET GIFT INSPIRATION
+      </a>
+
+    </div>
 
   </div>
 
-  <div class="gift-photo">
+</section>
 
-    <img
-      loading="lazy"
-      src="https://images.pexels.com/photos/6621463/pexels-photo-6621463.jpeg?auto=compress&cs=tinysrgb&w=1100"
-      alt="Assortment of handmade soap bars presented beautifully">
+<!-- EDITORIAL STATEMENT -->
 
-  </div>
+<section class="statement">
 
-</div>
-
-<!-- QUOTE -->
-
-<section class="quote">
-
-  <span class="eyebrow">
-    A little art in everyday life
-  </span>
+  <span class="eyebrow">The Willow &amp; Bloom Philosophy</span>
 
   <blockquote>
-    “The most beautiful things
-    are often the ones made
-    slowly, thoughtfully, and by hand.”
+    “Beautiful things do not always have to be
+    perfect — sometimes their <em>individuality</em>
+    is what makes them special”
   </blockquote>
-
-  <div class="quote-caption">
-    THE WILLOW &amp; BLOOM PHILOSOPHY
-  </div>
 
 </section>
 
@@ -1033,39 +911,35 @@ footer .brand small {
 <section class="newsletter" id="newsletter">
 
   <span class="eyebrow">
-    The Willow &amp; Bloom Letter
+    A little something beautiful in your inbox
   </span>
 
-  <h2>
-    Let Something Beautiful Bloom.
-  </h2>
+  <h2>Join the Bloom Club</h2>
 
   <p>
-    Join us for new swirl designs,
-    gift inspiration, seasonal collections
-    and little moments of botanical beauty.
+    Discover new designs, seasonal collections,
+    thoughtful gift ideas and inspiration
+    for everyday rituals.
   </p>
 
-  <form id="subscribe">
-
+  <form id="newsletter-form">
     <input
       type="email"
-      name="email"
+      id="email"
       placeholder="Your email address"
       aria-label="Your email address"
       required>
 
     <button class="btn" type="submit">
-      JOIN OUR LETTER
+      JOIN THE CLUB
     </button>
-
   </form>
 
-  <div id="message" aria-live="polite"></div>
+  <div id="form-message" aria-live="polite"></div>
 
-  <p style="font-size:11px;">
-    Portfolio demonstration only.
-    No email addresses are collected or stored.
+  <p class="disclaimer">
+    Portfolio demo only. No email information
+    is collected or stored.
   </p>
 
 </section>
@@ -1076,70 +950,47 @@ footer .brand small {
 
 <footer>
 
-  <div class="footer-grid">
+  <div class="footer-content">
 
     <div>
-
-      <div class="brand">
+      <div class="logo">
         Willow &amp; Bloom
-        <small>ARTISAN SOAP ATELIER</small>
+        <small>ARTISAN SOAP STUDIO</small>
+      </div>
+      <p>A little art in every bar</p>
+    </div>
+
+    <div class="footer-links">
+
+      <div>
+        <a href="#collection">Collection</a>
+        <a href="#art">The Process</a>
       </div>
 
-      <p>
-        Beautifully handcrafted soap.<br>
-        A little art in every bar.
-      </p>
-
-    </div>
-
-    <div>
-
-      <b style="font-size:12px;letter-spacing:1px;">
-        EXPLORE
-      </b>
-
-      <a href="#collection">Our Soaps</a>
-      <a href="#ingredients">Our Inspiration</a>
-      <a href="#gifts">Gift Ideas</a>
-
-    </div>
-
-    <div>
-
-      <b style="font-size:12px;letter-spacing:1px;">
-        DISCOVER
-      </b>
-
-      <a href="#philosophy">Our Philosophy</a>
-      <a href="#newsletter">Our Letter</a>
-      <a href="#collection">The Collection</a>
+      <div>
+        <a href="#gifts">Gift Atelier</a>
+        <a href="#newsletter">Bloom Club</a>
+      </div>
 
     </div>
 
   </div>
 
-  <div class="footer-bottom">
-
-    <span>
-      © 2026 Willow &amp; Bloom
-    </span>
-
-    <span>
-      FICTIONAL BRAND · PORTFOLIO DESIGN CONCEPT
-    </span>
-
+  <div class="footer-end">
+    <span>© 2026 Willow &amp; Bloom</span>
+    <span>FICTIONAL BRAND · PORTFOLIO WEBSITE CONCEPT</span>
   </div>
 
 </footer>
 
 <script>
-document.getElementById("subscribe").addEventListener(
+document.getElementById("newsletter-form").addEventListener(
   "submit",
   function(event) {
     event.preventDefault();
 
-    document.getElementById("message").textContent =
-      "Thank you! This is a portfolio demonstration. No email has been submitted.";
+    document.getElementById("form-message").textContent =
+      "Thank you! This is a portfolio demo — no email has been submitted.";
 
     this.reset();
   }
